@@ -1,17 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback } from "react";
 
-function CounterButton({ onClick }) {
-  /*DO NOT EDIT THIS LINE */ console.log("CounterButton rendered!"); //DO NOT edit this line 
+function CounterButton({ increment }) {
+  /*DO NOT EDIT THIS LINE */ console.log("CounterButton rendered!"); //DO NOT edit this line
 
   const handleClick = useCallback(() => {
-    onClick();
-  }, [onClick]);
+    increment(); // Use the increment prop directly
+  }, [increment]);
 
-  return (
-    <button onClick={handleClick}>
-      Increment Counter
-    </button>
-  );
+  return <button onClick={handleClick}>Increment Counter</button>;
 }
 
 export default React.memo(CounterButton);
